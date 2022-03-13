@@ -13,10 +13,7 @@ fi
 
 ## Check Linux Distro
 distro_codename="$(source /etc/os-release && printf "%s" "${VERSION_CODENAME}")"
-if [[ $distro_codename != buster ]] && [[ $distro_codename != bullseye ]] ; then
-	warn_1; echo "Only Debian 10/11 is supported"; normal_4
-	exit 1
-fi
+
 
 ## Check Virtual Environment
 systemd-detect-virt > /dev/null
